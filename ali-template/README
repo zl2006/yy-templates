@@ -1,0 +1,14 @@
+demo-common		:	公共类及工具包
+demo-dao		:	数据库访问类(cobar),此层提供数据库数据的缓存(memcached)/或者使用(tair)
+demo-dto		:	数据传输对象,用于查询等.
+demo-model		:	业务数据实体
+demo-service		:	项目所有服务接口申明
+demo-service-module1	:	服务接口实现(module1),服务生产者(dubbo)
+demo-service-module2	:	服务接口实现(module2),服务生产者(dubbo)
+demo-service-agent	:	调用外部服务接口的实现,例如短信接口等.　主要通过中间适配层控制外部的可变性.　接口申明也在demo-service中.
+demo-web-action		:	控制层,以及提供restful服务(spring mvc), 演示消息生产者(rocketmq)
+demo-web-page		:	页面/ｊｓ/css等其它静态资源
+-----------------------------------------------------------------------------------------------------------------------------------------------
+demo-message-consumer	:	消息消费者(rocketymq)
+demo-service-consumer	:	服务消费者(dubbo)
+demo-job		:	后台任务(quartz)

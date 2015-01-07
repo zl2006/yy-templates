@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0 </modelVersion>
+	<parent>
+		<groupId>org.yy</groupId>
+		<artifactId>home</artifactId>
+		<version>1.0</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	<groupId>org.yy.app-demo</groupId>
+	<artifactId>demo-web-action</artifactId>
+	<packaging>jar</packaging>
+	<name>demo-web-action</name>
+
+	<dependencies>
+
+		<!-- 应用依赖 -->
+		<dependency>
+			<groupId>org.yy.app-demo</groupId>
+			<artifactId>demo-service-module1</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.yy.app-demo</groupId>
+			<artifactId>demo-service-module2</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.yy.app-demo</groupId>
+			<artifactId>demo-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- 基础框架 -->
+		<dependency>
+			<groupId>org.yy.framework</groupId>
+			<artifactId>framework-webframe</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.yy.framework</groupId>
+			<artifactId>framework-document</artifactId>
+		</dependency>
+		<!-- end -->
+
+		<!-- 数据库及其它组件 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- end -->
+
+		<!-- 测试时使用 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- end -->
+
+		<!-- 消息 -->
+		<dependency>
+			<groupId>com.alibaba.rocketmq</groupId>
+			<artifactId>rocketmq-client</artifactId>
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+		</dependency> -->
+		<!-- end -->
+
+	</dependencies>
+
+</project>
