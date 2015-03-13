@@ -1,0 +1,10 @@
+1，实体层：demo-models/demo-dto		:	数据传输对象,用于查询等.
+1，实体层：demo-modles/demo-model	:	业务数据实体
+2，数据访问层：demo-dao			:	数据库访问类（可使用cobar/mongodb等),此层提供数据库层面的缓存(可使用memcached/redis等)
+3，业务层：demo-services/demo-service-interface	:	项目所有服务接口申明
+3，业务层：demo-services/demo-service-module1	:	服务接口实现(module1模块,可使用hessian/dubbuo/cxf等)
+4，控制层：demo-web/demo-web-action		:	控制层,以及提供restful服务(spring mvc,sitemesh,velocity等)
+5，展示层：demo-web/demo-web-page		:	页面/js/css等其它静态资源
+-----------------------------------------------------------------------------------------------------------------------------------------------
+消息：demo-mq/demo-mq-client1			:	消息消费者
+任务：demo-task/demo-task-modeul1		:	后台任务(可使用quartz)

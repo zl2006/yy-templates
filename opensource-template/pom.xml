@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.yy</groupId>
+		<artifactId>home</artifactId>
+		<version>1.0</version>
+		<relativePath>../../yy-home/pom.xml</relativePath>
+	</parent>
+    	<artifactId>app-demo</artifactId>
+    	<packaging>pom</packaging>
+    	<name>app-demo</name>
+	 
+
+	<!--模块声明-->
+    	<modules>
+		<module>./demo-models/demo-dto</module>			<!-- 传输对象 -->
+		<module>./demo-models/demo-model</module>		<!-- 业务实体 -->
+		<module>./demo-dao</module>				<!-- 数据访问层 -->
+		<module>./demo-services/demo-service-interface</module>	<!-- 业务接口层 -->
+		<module>./demo-services/demo-service-module1</module>	<!-- 业务模块一实现层 -->
+		<module>./demo-services/demo-service-module2</module>	<!-- 业务模块一实现层 -->
+		<module>./demo-web/demo-web-action</module>		<!-- 逻辑控制层 -->
+		<module>./demo-web/demo-web-page</module>		<!-- 页面展示层 -->
+
+		<!--后台-->
+		<module>./demo-mq/demo-mq-client1</module>		<!-- 消息消费者1 -->
+		<module>./demo-mq/demo-mq-client2</module>		<!-- 消息消费者2 -->
+		<module>./demo-task/demo-task-module1</module>		<!-- 任务1 -->
+		<module>./demo-task/demo-task-module2</module>		<!-- 任务2 -->
+
+
+    	</modules>
+</project>
