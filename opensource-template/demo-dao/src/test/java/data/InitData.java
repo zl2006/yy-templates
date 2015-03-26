@@ -1,4 +1,4 @@
-package org.yy.demo.dao;
+package data;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
