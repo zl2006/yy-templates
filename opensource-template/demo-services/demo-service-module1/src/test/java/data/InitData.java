@@ -1,4 +1,4 @@
-package spring;
+package data;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
