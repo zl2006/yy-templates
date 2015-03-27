@@ -31,6 +31,5 @@ public class UserServiceTest extends AbstractSpringTest {
     public void testFindUser()
         throws Exception {
         Assert.assertNotNull(userService.findUser("18665867002"));
-        Thread.sleep(1000000);
     }
 }
