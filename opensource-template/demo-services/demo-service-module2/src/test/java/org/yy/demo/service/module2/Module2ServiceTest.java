@@ -30,6 +30,5 @@ public class Module2ServiceTest extends AbstractSpringTest {
     @Test
     public void testModule2Method() throws Exception{
         Assert.assertEquals("hellodfd", module2Service.sayHello("dfd"));
-        Thread.sleep(1000000);
     }
 }
