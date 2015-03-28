@@ -101,6 +101,7 @@
 
 
 	<!-- 服务化文档spring配置 -->
+	<!-- 线上环境一般要注释 -->
 	<bean id="simpleUrlMapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
