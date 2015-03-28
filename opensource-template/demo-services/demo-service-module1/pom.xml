@@ -40,6 +40,7 @@
 		</dependency>
 		
 		<!-- dubbo -->
+		<!-- 
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
@@ -51,7 +52,7 @@
 		<dependency>
 			<groupId>com.101tec</groupId>
 			<artifactId>zkclient</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<!-- 测试时使用 -->
 		<dependency>
