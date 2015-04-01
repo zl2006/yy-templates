@@ -13,38 +13,34 @@
 	<packaging>jar</packaging>
 	<name>demo-task-module2</name>
 
-	<dependencies>
-		
-		<!--框架-->
-		<dependency>
-			<groupId>org.yy.framework</groupId>
-			<artifactId>framework-webframe</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.yy.framework</groupId>
-			<artifactId>framework-document</artifactId>
-			<scope>provided</scope>
-		</dependency>
+	<dependencies> 
+  
+		<!--框架 -->
+		<dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-context</artifactId>  
+        </dependency>  
+   
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-context-support</artifactId>  
+        </dependency>  
+   
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-tx</artifactId>  
+        </dependency>  
+   
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-web</artifactId>  
+        </dependency>  
 
-		<!-- 测试时使用 -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency><!--mysql驱动 -->
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!-- end -->
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+		</dependency> 
 
-	</dependencies>
-
+	</dependencies> 
+  
 </project>
