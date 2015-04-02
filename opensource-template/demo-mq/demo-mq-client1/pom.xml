@@ -46,10 +46,11 @@
 		<!-- end -->
 		
 		<!-- 消息 -->
+		<!-- 
 		<dependency>
 			<groupId>com.alibaba.rocketmq</groupId>
 			<artifactId>rocketmq-client</artifactId>
-		</dependency>
+		</dependency> -->
 		<!-- 
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
