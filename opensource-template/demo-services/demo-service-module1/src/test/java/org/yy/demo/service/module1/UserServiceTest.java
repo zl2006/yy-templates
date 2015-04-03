@@ -12,6 +12,10 @@ import javax.annotation.Resource;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
+import org.yy.demo.dao.UserDao;
+import org.yy.demo.model.User;
+import org.yy.demo.service.module1.impl.UserServiceImpl;
 import org.yy.framework.base.test.AbstractSpringTest;
 
 /**
@@ -31,5 +35,23 @@ public class UserServiceTest extends AbstractSpringTest {
     public void testFindUser()
         throws Exception {
         Assert.assertNotNull(userService.findUser("18665867002"));
+    }
+    
+    @Test
+    public void testFindUserByMock()throws Exception{
+    	
+    	UserDao udao = Mockito.mock(UserDao.class);
+    	UserServiceImpl us = new UserServiceImpl();
+    	
+    	User u = new User();
+    	u.setLoginID("18665867002");
+    	u.setName("liangzhou20066");
+    	Mockito.when(udao.findUser("18665867002")).thenReturn(u);
+    	us.setUserDao(udao);
+    	
+    	User result = us.findUser("18665867002");
+    	
+    	Assert.assertSame("liangzhou20066", result.getName());
+    	Assert.assertSame("18665867002", result.getLoginID());
     }
 }
