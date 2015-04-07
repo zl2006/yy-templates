@@ -12,3 +12,5 @@ grant all privileges on demo.* to demo@"127.0.0.1" identified  by 'demo';
 grant all privileges on demo.* to demo@"localhost" identified  by 'demo';
 flush privileges;
 
+revoke all privileges on demo.* from demo@"%" identified  by 'demo';
+
