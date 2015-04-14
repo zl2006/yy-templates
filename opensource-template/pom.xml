@@ -20,8 +20,9 @@
 		<module>./demo-services/demo-service-interface</module>	<!-- 业务接口层 -->
 		<module>./demo-services/demo-service-module1</module>	<!-- 业务模块一实现层 -->
 		<module>./demo-services/demo-service-module2</module>	<!-- 业务模块一实现层 -->
+		<module>./demo-services/demo-service-consumer</module>	<!-- hessian远程调用服务 -->
 		<module>./demo-web/demo-web-action</module>		<!-- 逻辑控制层 -->
-		<module>./demo-web/demo-web-page</module>		<!-- 页面展示层 -->
+		<module>./demo-web/demo-web-page</module>		<!-- 页面展示层, 导出hessian服务 -->
 
 		<!--后台-->
 		<module>./demo-mq/demo-mq-client1</module>		<!-- 消息消费者1 -->
