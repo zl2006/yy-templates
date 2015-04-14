@@ -34,7 +34,7 @@ public class LoginServiceTest extends AbstractSpringTest{
     @Test
     public void testLogin()throws ServiceException , Exception{
         Assert.assertTrue(  loginService.login("18665867002") );
-        Thread.sleep(100000);
+        //Thread.sleep(100000);
     }
     
 }
