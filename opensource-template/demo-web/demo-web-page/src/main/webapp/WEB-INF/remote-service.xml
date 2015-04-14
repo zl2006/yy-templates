@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean name="/module2Service"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<property name="service" ref="module2Service" />
+		<property name="serviceInterface" value="org.yy.demo.service.module2.Module2Service" />
+	</bean>
+</beans>

@@ -119,6 +119,23 @@
 	</filter-mapping>
 	<!-- ************************************************************************************* -->
 
+	<!-- ***********************************spring  hessian*********************************** -->
+	 <servlet>
+        <servlet-name>remoting</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/remote-service.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>remoting</servlet-name>
+        <url-pattern>/remoting/*</url-pattern>
+    </servlet-mapping>
+
+	<!-- ************************************************************************************* -->
 
 	<!-- ***********************************spring mvc *********************************** -->
 	<servlet>
@@ -128,7 +145,7 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath*:spring/springmvc.xml</param-value>
 		</init-param>
-		<load-on-startup>1</load-on-startup>
+		<load-on-startup>2</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>

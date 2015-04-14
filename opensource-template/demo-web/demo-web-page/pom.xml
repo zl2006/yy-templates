@@ -19,6 +19,10 @@
 			<artifactId>demo-web-action</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<!--框架 -->
+
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+		</dependency>
 	</dependencies>
 </project>
