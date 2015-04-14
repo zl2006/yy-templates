@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<beans>
+		<bean id="module2Service"
+			class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+			<property name="serviceUrl"
+				value="http://127.0.0.1:8080/remoting/module2Service" />
+			<property name="serviceInterface" value=" org.yy.demo.service.module2.Module2Service" />
+		</bean>
+
+		<bean id="hessianRemoteCall" class="org.yy.demo.service.module2.impl.HessianRemoteCall">
+			<property name="module2Service" ref="module2Service"></property>
+		</bean>
+	</beans>
+
+</beans>
