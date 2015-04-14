@@ -82,6 +82,7 @@
 
 
 	<!-- cache -->
+	<!-- 
 	<import resource="classpath*:simplesm-context.xml" />
 	<aop:aspectj-autoproxy />
 	<context:annotation-config />
@@ -106,10 +107,11 @@
 	</bean>
 	<bean class="com.google.code.ssm.Settings">
 		<property name="order" value="500" />
-	</bean>
+	</bean> -->
 
 
 	<!-- 性能监控日志 -->
+	<!--
 	<bean id="perf4jInterceptor" class="org.yy.framework.base.log.Perf4jInterceptor"></bean>
 	<bean
 		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
@@ -123,7 +125,7 @@
 				<value>perf4jInterceptor</value>
 			</list>
 		</property>
-	</bean>
+	</bean>  -->
 
 	<!-- 消息生产者定义 -->
 	<bean id="producer" class="com.alibaba.rocketmq.client.producer.DefaultMQProducer"
