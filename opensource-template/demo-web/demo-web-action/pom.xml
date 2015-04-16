@@ -55,6 +55,19 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- end -->
+		
+		<dependency><!--tiles-->
+			    <groupId>org.apache.tiles</groupId>
+			    <artifactId>tiles-extras</artifactId>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.tiles</groupId>
+			    <artifactId>tiles-servlet</artifactId>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.tiles</groupId>
+			    <artifactId>tiles-jsp</artifactId>
+			</dependency>
 
 		<!-- 测试时使用 -->
 		<dependency>

@@ -9,15 +9,32 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
+	<!--   注册了DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter两个bean，配置一些messageconverter。即解决了@Controller注解的使用前提配置。-->
 	<mvc:annotation-driven />
+	<!-- 要使用spring mvc中的@Controller注解，就必须要配置<mvc:annotation-driven />，否则org.springframework.web.servlet.DispatcherServlet无法找到控制器并把请求分发到控制器 -->
 	<context:annotation-config />
-	<!-- 设置使用注解的类所在的jar包 -->
+	<!-- 扫描java包中相关的mvc元注解 -->
 	<context:component-scan base-package="org.yy.demo.controller"></context:component-scan>
-	<!-- 完成请求和注解POJO的映射 -->
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	
+	
+	<!--拦截器-->
+	<!-- 
+    <mvc:interceptors>
+        <mvc:interceptor>
+			<mvc:mapping path="/admin/*.do"/>
+			<bean class="org.example.admin.ControlInterceptor" />
+			</mvc:interceptor>
+    </mvc:interceptors> -->
+    
+    
+    <!-- 配置后，不会被springmvc(web.xml中配置的DispatcherServlet)处理 -->
+	<mvc:resources mapping="/resources/**" location="/resources/" /> 
 
 
+	<!--  1， 完成MessageConverter的注册
+            2， 请求的方法中如果有＠RequestBody，将会采用消息转换器对request.getInputStrem的数据流进行转换
+            3，请求的方法中如果有@ResponseBody, 将会采用消息转换器把返回结果写入到response.getOutputStrem中-->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
 	<!-- 启动JSON格式的配置,当有@ResponseBody元数据时，会使用它转换返回对象 -->
 	<bean id="jacksonMessageConverter"
 		class=" org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -43,11 +60,19 @@
 	</bean>
 
 
+
+
+    <bean id="tilesConfigurer"
+        class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles/tiles-config.xml</value>
+            </list>
+        </property>
+    </bean>
 	<!-- 根据客户端的不同的请求决定不同的view进行响应, 如 /blog/1.json返回json格式数据 /blog/1.xml返回xml格式数据 
 		/blog.do返回jsp -->
-	<bean
-		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<!-- 用于开启 /userinfo/123?format=json 的支持 -->
 		<property name="favorParameter" value="false" />
 		<!-- 设置为true以忽略对Accept Header的支持 -->
@@ -62,14 +87,15 @@
 				<entry key="xml" value="application/xml" />
 			</map>
 		</property>
-
 		<property name="viewResolvers">
 			<list>
 				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	           		 <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	        	</bean>
 				<bean
 					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-					<property name="viewClass"
-						value="org.springframework.web.servlet.view.JstlView" />
+					<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 					<property name="prefix" value="/" />
 					<property name="suffix" value=".jsp"></property>
 				</bean>
@@ -83,8 +109,7 @@
 					<property name="objectMapper">
 						<bean class="com.fasterxml.jackson.databind.ObjectMapper">
 							<property name="serializationInclusion">
-								<value
-									type="com.fasterxml.jackson.annotation.JsonInclude$Include">NON_NULL</value>
+								<value type="com.fasterxml.jackson.annotation.JsonInclude$Include">NON_NULL</value>
 							</property>
 						</bean>
 					</property>
@@ -118,6 +143,7 @@
 			</list>
 		</constructor-arg>
 	</bean>
+
 
 	<!-- 业务异常处理 -->
 	<bean id="exceptionResolver" class="org.yy.framework.base.exception.AppExceptionResolver">
