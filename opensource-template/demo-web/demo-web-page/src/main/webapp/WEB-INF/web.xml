@@ -102,6 +102,9 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	 <listener><!-- 以便在普通类中获取request信息，ServletRequestAttributes srAttrs = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes(); -->
+    	<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+   </listener>
 	<!-- listener> <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class> 
 		</listener -->
 	<filter>
@@ -198,5 +201,11 @@
 		<session-timeout>60</session-timeout>
 	</session-config>
 
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/yy</taglib-uri>
+			<taglib-location>/WEB-INF/yy.tld</taglib-location>
+		</taglib>
+	</jsp-config>
 
 </web-app>

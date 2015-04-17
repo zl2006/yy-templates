@@ -27,53 +27,50 @@
 
 	<!-- 数据源配置 -->
 	<!-- 测试环境 -->
-	<!--  
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-		<property name="driverClass" value="${jdbc.driverClassName}" />
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource"> 
+		<property name="driverClass" value="${jdbc.driverClassName}" /> <property 
+		name="url" value="${jdbc.url}" /> <property name="username" value="${jdbc.username}" 
+		/> <property name="password" value="${jdbc.password}" /> </bean> -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<!-- 基本属性 url、user、password -->
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
+
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="1" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="20" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+
+		<property name="validationQuery" value="SELECT 'x'" />
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20" />
+
+		<!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+		<property name="filters" value="stat" />
 	</bean>
-	-->
-	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
-		    <!-- 基本属性 url、user、password -->
-		    <property name="url" value="${jdbc.url}" />
-		    <property name="username" value="${jdbc.username}" />
-		    <property name="password" value="${jdbc.password}" />
-		      
-		    <!-- 配置初始化大小、最小、最大 -->
-		    <property name="initialSize" value="1" />
-		    <property name="minIdle" value="1" /> 
-		    <property name="maxActive" value="20" />
-		 
-		    <!-- 配置获取连接等待超时的时间 -->
-		    <property name="maxWait" value="60000" />
-		 
-		    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
-		    <property name="timeBetweenEvictionRunsMillis" value="60000" />
-		 
-		    <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
-		    <property name="minEvictableIdleTimeMillis" value="300000" />
-		  
-		    <property name="validationQuery" value="SELECT 'x'" />
-		    <property name="testWhileIdle" value="true" />
-		    <property name="testOnBorrow" value="false" />
-		    <property name="testOnReturn" value="false" />
-		 
-		    <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
-		    <property name="poolPreparedStatements" value="true" />
-		    <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
-		 
-		    <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
-		    <property name="filters" value="stat" /> 
-		</bean>
-			<!-- end -->
+	<!-- end -->
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath*:sqlmap/sqlmap-mapping*.xml" />
-		<property name="configLocation" value="classpath:sqlmap/ibatis-default-demo.xml"  ></property>
+		<property name="configLocation" value="classpath:sqlmap/ibatis-default-demo.xml"></property>
 	</bean>
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
@@ -117,32 +114,16 @@
 
 
 	<!-- cache -->
-	<!-- 
-	<import resource="classpath*:simplesm-context.xml" />
-	<aop:aspectj-autoproxy />
-	<context:annotation-config />
-	<bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
-		<property name="cacheClientFactory">
-			<bean name="cacheClientFactory"
-				class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
-		</property>
-		<property name="addressProvider">
-			<bean class="com.google.code.ssm.config.DefaultAddressProvider">
-				<property name="address" value="${cache.address}" />
-			</bean>
-		</property>
-		<property name="configuration">
-			<bean
-				class="com.google.code.ssm.providers.xmemcached.XMemcachedConfiguration">
-				<property name="consistentHashing" value="true" />
-				<property name="optimizeGet" value="true"></property>
-				<property name="connectionPoolSize" value="${cache.poolsize}"></property>
-			</bean>
-		</property>
-	</bean>
-	<bean class="com.google.code.ssm.Settings">
-		<property name="order" value="500" />
-	</bean> -->
+	<!-- <import resource="classpath*:simplesm-context.xml" /> <aop:aspectj-autoproxy 
+		/> <context:annotation-config /> <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory"> 
+		<property name="cacheClientFactory"> <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" 
+		/> </property> <property name="addressProvider"> <bean class="com.google.code.ssm.config.DefaultAddressProvider"> 
+		<property name="address" value="${cache.address}" /> </bean> </property> 
+		<property name="configuration"> <bean class="com.google.code.ssm.providers.xmemcached.XMemcachedConfiguration"> 
+		<property name="consistentHashing" value="true" /> <property name="optimizeGet" 
+		value="true"></property> <property name="connectionPoolSize" value="${cache.poolsize}"></property> 
+		</bean> </property> </bean> <bean class="com.google.code.ssm.Settings"> <property 
+		name="order" value="500" /> </bean> -->
 
 
 	<!-- 性能监控日志 -->
@@ -161,5 +142,11 @@
 		</property>
 	</bean>
 
-	 
+	<!-- token -->
+	<bean id="tokenStore" class="org.yy.framework.base.token.SessionTokenStore">
+	</bean>
+	<bean id="tokenHandler" class="org.yy.framework.base.token.WebTokenHandler">
+		<constructor-arg ref="tokenStore"></constructor-arg>
+	</bean>
+
 </beans>
