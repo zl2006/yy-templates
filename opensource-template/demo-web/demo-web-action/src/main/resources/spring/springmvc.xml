@@ -93,8 +93,7 @@
 				<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 	           		 <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
 	        	</bean>
-				<bean
-					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+				<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 					<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 					<property name="prefix" value="/" />
 					<property name="suffix" value=".jsp"></property>
@@ -117,9 +116,10 @@
 				<!-- fastjson方式 --><!-- <bean class="com.alibaba.fastjson.support.spring.FastJsonJsonView"> 
 					<property name="charset" value="UTF8" /> </bean> -->
 				<!-- for application/xml -->
-				<!-- <bean class="org.springframework.web.servlet.view.xml.MarshallingView" 
-					> <property name="marshaller"> <bean class="org.springframework.oxm.xstream.XStreamMarshaller"/> 
-					</property> </bean> -->
+				<!--  
+				<bean class="org.yy.framework.base.view.FrameworkXtreamView"  > 
+					<property name="marshaller"> <bean class="org.springframework.oxm.xstream.XStreamMarshaller"/></property>
+				</bean> -->
 			</list>
 		</property>
 	</bean>

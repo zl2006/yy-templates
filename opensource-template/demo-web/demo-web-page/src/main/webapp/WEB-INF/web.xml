@@ -142,7 +142,7 @@
 
 	<!-- ***********************************spring mvc *********************************** -->
 	<servlet>
-		<servlet-name>springmvc</servlet-name>
+		<servlet-name>springmvc</servlet-name><!-- spring_mvc.xml中配置的resources不会被处理 -->
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -158,6 +158,11 @@
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>*.json</url-pattern>
 	</servlet-mapping>
+	<!--
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>*.xml</url-pattern>
+	</servlet-mapping>  -->
 	<!-- ************************************************************************************* -->
 	
 	<!-- ***********************************druid 监控，正式环境一般注释 *********************************** -->
