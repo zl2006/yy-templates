@@ -110,6 +110,7 @@
 
 
 	<!-- cache -->
+	<!--
 	<import resource="classpath*:simplesm-context.xml" />
 	<aop:aspectj-autoproxy />
 	<context:annotation-config />
@@ -134,7 +135,7 @@
 	</bean>
 	<bean class="com.google.code.ssm.Settings">
 		<property name="order" value="500" />
-	</bean>
+	</bean>  -->
 
 
 	<!-- 性能监控日志 -->
