@@ -26,11 +26,6 @@
 
 
 	<!-- 数据源配置 -->
-	<!-- 测试环境 -->
-	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource"> 
-		<property name="driverClass" value="${jdbc.driverClassName}" /> <property 
-		name="url" value="${jdbc.url}" /> <property name="username" value="${jdbc.username}" 
-		/> <property name="password" value="${jdbc.password}" /> </bean> -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<!-- 基本属性 url、user、password -->
@@ -76,6 +71,7 @@
 		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
 
+
 	<!-- 事务配置 -->
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
@@ -114,16 +110,31 @@
 
 
 	<!-- cache -->
-	<!-- <import resource="classpath*:simplesm-context.xml" /> <aop:aspectj-autoproxy 
-		/> <context:annotation-config /> <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory"> 
-		<property name="cacheClientFactory"> <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" 
-		/> </property> <property name="addressProvider"> <bean class="com.google.code.ssm.config.DefaultAddressProvider"> 
-		<property name="address" value="${cache.address}" /> </bean> </property> 
-		<property name="configuration"> <bean class="com.google.code.ssm.providers.xmemcached.XMemcachedConfiguration"> 
-		<property name="consistentHashing" value="true" /> <property name="optimizeGet" 
-		value="true"></property> <property name="connectionPoolSize" value="${cache.poolsize}"></property> 
-		</bean> </property> </bean> <bean class="com.google.code.ssm.Settings"> <property 
-		name="order" value="500" /> </bean> -->
+	<import resource="classpath*:simplesm-context.xml" />
+	<aop:aspectj-autoproxy />
+	<context:annotation-config />
+	<bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
+		<property name="cacheClientFactory">
+			<bean name="cacheClientFactory"
+				class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
+		</property>
+		<property name="addressProvider">
+			<bean class="com.google.code.ssm.config.DefaultAddressProvider">
+				<property name="address" value="${cache.address}" />
+			</bean>
+		</property>
+		<property name="configuration">
+			<bean
+				class="com.google.code.ssm.providers.xmemcached.XMemcachedConfiguration">
+				<property name="consistentHashing" value="true" />
+				<property name="optimizeGet" value="true"></property>
+				<property name="connectionPoolSize" value="${cache.poolsize}"></property>
+			</bean>
+		</property>
+	</bean>
+	<bean class="com.google.code.ssm.Settings">
+		<property name="order" value="500" />
+	</bean>
 
 
 	<!-- 性能监控日志 -->
@@ -142,9 +153,9 @@
 		</property>
 	</bean>
 
+
 	<!-- token -->
-	<bean id="tokenStore" class="org.yy.framework.base.token.SessionTokenStore">
-	</bean>
+	<bean id="tokenStore" class="org.yy.framework.base.token.SessionTokenStore"></bean>
 	<bean id="tokenHandler" class="org.yy.framework.base.token.WebTokenHandler">
 		<constructor-arg ref="tokenStore"></constructor-arg>
 	</bean>
