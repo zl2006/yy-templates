@@ -39,7 +39,7 @@
 
 	<!-- 为单独的类或包(user)指定日志配置 -->
 	<logger name="user" >
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="myConsole" />
 	</logger>
 
