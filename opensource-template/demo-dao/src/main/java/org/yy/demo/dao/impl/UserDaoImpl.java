@@ -8,14 +8,12 @@
  */
 package org.yy.demo.dao.impl;
 
-import java.sql.SQLException;
 import java.util.Date;
 
 import org.yy.demo.dao.UserDao;
 import org.yy.demo.dto.UserDTO;
 import org.yy.demo.model.User;
 import org.yy.framework.base.dao.AbstractMyBatisDao;
-import org.yy.framework.basedata.exception.DaoException;
 import org.yy.framework.basedata.query.ResultDto;
 
 import com.google.code.ssm.api.ParameterDataUpdateContent;
@@ -39,13 +37,9 @@ public class UserDaoImpl extends AbstractMyBatisDao implements UserDao {
 	@UpdateSingleCache(namespace = namespace, expiration = expiration)
 	public User insertUser(
 			@ParameterValueKeyProvider @ParameterDataUpdateContent User user) {
-		try {
-			user.setCreateTime(new Date());
-			user.setUpdateTime(new Date());
-			sqlSession.insert("user.INSERT_USER", user);
-		} catch (Exception e) {
-			throw new DaoException("USER_ADD_ERROR", "保存用户异常", e);
-		}
+		user.setCreateTime(new Date());
+		user.setUpdateTime(new Date());
+		sqlSession.insert("user.INSERT_USER", user);
 		return user;
 	}
 
@@ -58,34 +52,22 @@ public class UserDaoImpl extends AbstractMyBatisDao implements UserDao {
 	@UpdateSingleCache(namespace = namespace, expiration = expiration)
 	public int updateUser(
 			@ParameterValueKeyProvider @ParameterDataUpdateContent User user) {
-		try {
-			user.setUpdateTime(new Date());
-			return sqlSession.update("user.UPDATE_USER", user);
-		} catch (Exception e) {
-			throw new DaoException("USER_UPDATE_ERROR", "更新用户异常", e);
-		}
-
+		user.setUpdateTime(new Date());
+		return sqlSession.update("user.UPDATE_USER", user);
 	}
 
 	/** {@inheritDoc} */
 	@Override
 	@ReadThroughSingleCache(namespace = namespace, expiration = expiration)
 	public User findUser(@ParameterValueKeyProvider String loginID) {
-		try {
-			return (User) sqlSession.selectOne("user.FIND_USER_BY_LOGINID",
-					loginID);
-		} catch (Exception e) {
-			throw new DaoException("USER_FIND_ERROR", "查询用户异常", e);
-		}
+		return (User) sqlSession
+				.selectOne("user.FIND_USER_BY_LOGINID", loginID);
+
 	}
 
 	/** {@inheritDoc} */
 	@Override
 	public ResultDto<User> findUser(UserDTO userDTO) {
-		try {
-			return findBypagination("user.FIND_USER_BY_DTO", userDTO);
-		} catch (SQLException e) {
-			throw new DaoException("USER_FIND_ERROR", "查询用户异常", e);
-		}
+		return findBypagination("user.FIND_USER_BY_DTO", userDTO);
 	}
 }
