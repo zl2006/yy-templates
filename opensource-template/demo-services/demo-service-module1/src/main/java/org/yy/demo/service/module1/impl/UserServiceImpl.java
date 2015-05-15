@@ -11,8 +11,11 @@ package org.yy.demo.service.module1.impl;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Service;
 import org.yy.demo.dao.UserDao;
 import org.yy.demo.dto.UserDTO;
 import org.yy.demo.model.User;
@@ -29,8 +32,10 @@ import org.yy.framework.basedata.query.ResultDto;
  * @version [1.0, 2013年12月1日]
  * @since [app-user/1.0]
  */
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
+	@Resource(name="userDAO")
 	protected UserDao userDao;
 
 	/** {@inheritDoc} */

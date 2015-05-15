@@ -10,6 +10,7 @@ package org.yy.demo.service.module1.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.yy.demo.service.module1.Module1Service;
 
 /**
@@ -19,6 +20,7 @@ import org.yy.demo.service.module1.Module1Service;
  * @version [0.1, 2014年7月22日]
  * @since [APP-DEMO/0.1]
  */
+@Service("module1Service")
 public class Module1ServiceImpl implements Module1Service {
 
 	private static final Logger logger = LoggerFactory
