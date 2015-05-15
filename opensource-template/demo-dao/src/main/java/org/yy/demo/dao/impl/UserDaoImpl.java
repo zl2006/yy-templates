@@ -10,10 +10,11 @@ package org.yy.demo.dao.impl;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Repository;
+import org.yy.demo.dao.AbsDaoAdapter;
 import org.yy.demo.dao.UserDao;
 import org.yy.demo.dto.UserDTO;
 import org.yy.demo.model.User;
-import org.yy.framework.base.dao.AbstractMyBatisDao;
 import org.yy.framework.basedata.query.ResultDto;
 
 import com.google.code.ssm.api.ParameterDataUpdateContent;
@@ -30,7 +31,8 @@ import static org.yy.demo.model.User.*;
  * @version [1.0, 2013年11月21日]
  * @since [app-user/1.0]
  */
-public class UserDaoImpl extends AbstractMyBatisDao implements UserDao {
+@Repository("userDAO")
+public class UserDaoImpl extends AbsDaoAdapter implements UserDao {
 
 	/** {@inheritDoc} */
 	@Override
