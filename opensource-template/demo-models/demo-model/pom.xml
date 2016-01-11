@@ -29,5 +29,17 @@
 			<artifactId>framework-document</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.simple-spring-memcached</groupId>
+			<artifactId>spymemcached-provider</artifactId>
+			<scope>provider</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.simple-spring-memcached</groupId>
+			<artifactId>xmemcached-provider</artifactId>
+			<scope>provider</scope>
+		</dependency>
+
 	</dependencies>
 </project>
