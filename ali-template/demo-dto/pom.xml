@@ -8,15 +8,15 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-dto</artifactId>
+	<groupId>org.yy.ali-app-demo</groupId>
+	<artifactId>ali-demo-dto</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-dto</name>
+	<name>ali-demo-dto</name>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-model</artifactId>
+			<groupId>org.yy.ali-app-demo</groupId>
+			<artifactId>ali-demo-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>

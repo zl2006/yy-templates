@@ -55,7 +55,7 @@ public class UserDaoImpl extends AbstractMyBatisDao implements UserDao {
         try {
             return findBypagination("user.FIND_USER_BY_DTO", userDTO);
         }
-        catch (SQLException e) {
+        catch (Exception e) {
             throw new DaoException("USER_FIND_ERROR", "查询用户异常", e);
         }
     }

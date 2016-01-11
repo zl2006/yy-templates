@@ -9,9 +9,9 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-common</artifactId>
+	<groupId>org.yy.ali-app-demo</groupId>
+	<artifactId>ali-demo-common</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-common</name>
+	<name>ali-demo-common</name>
 
 </project>

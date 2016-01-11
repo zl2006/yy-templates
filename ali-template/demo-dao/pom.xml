@@ -8,21 +8,21 @@
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-dao</artifactId>
+	<groupId>org.yy.ali-app-demo</groupId>
+	<artifactId>ali-demo-dao</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-dao</name>
+	<name>ali-demo-dao</name>
 
 
 	<dependencies>
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-model</artifactId>
+			<groupId>org.yy.ali-app-demo</groupId>
+			<artifactId>ali-demo-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-dto</artifactId>
+			<groupId>org.yy.ali-app-demo</groupId>
+			<artifactId>ali-demo-dto</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
@@ -37,6 +37,17 @@
 			<artifactId>framework-document</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.google.code.simple-spring-memcached</groupId>
+			<artifactId>spymemcached-provider</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.simple-spring-memcached</groupId>
+			<artifactId>xmemcached-provider</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 
 		<!-- 测试时使用 -->
 		<dependency>

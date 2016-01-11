@@ -8,10 +8,10 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-job</artifactId>
+	<groupId>org.yy.ali-app-demo</groupId>
+	<artifactId>ali-demo-job</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-job</name>
+	<name>ali-demo-job</name>
 
 	<dependencies>
 		

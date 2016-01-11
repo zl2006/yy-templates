@@ -9,10 +9,10 @@
 		<version>1.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-model</artifactId>
+	<groupId>org.yy.ali-app-demo</groupId>
+	<artifactId>ali-demo-model</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-model</name>
+	<name>ali-demo-model</name>
 
 	<dependencies>
 		<dependency>

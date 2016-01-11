@@ -7,9 +7,9 @@
 		<version>1.0</version>
 		<relativePath>../../yy-home/pom.xml</relativePath>
 	</parent>
-    	<artifactId>app-demo</artifactId>
+    	<artifactId>ali-app-demo</artifactId>
     	<packaging>pom</packaging>
-    	<name>app-demo</name>
+    	<name>ali-app-demo</name>
 	 
 
 	<!--模块声明-->

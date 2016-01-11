@@ -8,22 +8,22 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-service</artifactId>
+	<groupId>org.yy.ali-app-demo</groupId>
+	<artifactId>ali-demo-service</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-service</name>
+	<name>ali-demo-service</name>
 
 	<dependencies>
 	
 		<!-- 应用相互依赖 -->
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-model</artifactId>
+			<groupId>org.yy.ali-app-demo</groupId>
+			<artifactId>ali-demo-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-dto</artifactId>
+			<groupId>org.yy.ali-app-demo</groupId>
+			<artifactId>ali-demo-dto</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		

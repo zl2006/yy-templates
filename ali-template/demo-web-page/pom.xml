@@ -8,15 +8,15 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-web-page</artifactId>
+	<groupId>org.yy.ali-app-demo</groupId>
+	<artifactId>ali-demo-web-page</artifactId>
 	<packaging>war</packaging>
-	<name>demo-web-page</name>
+	<name>ali-demo-web-page</name>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-web-action</artifactId>
+			<groupId>org.yy.ali-app-demo</groupId>
+			<artifactId>ali-demo-web-action</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<!--框架 -->
