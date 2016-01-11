@@ -8,15 +8,15 @@
 		<version>1.0</version>
 		<relativePath>../../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-web-page</artifactId>
+	<groupId>org.yy.opensource-app-demo</groupId>
+	<artifactId>opensource-demo-web-page</artifactId>
 	<packaging>war</packaging>
-	<name>demo-web-page</name>
+	<name>opensource-demo-web-page</name>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-web-action</artifactId>
+			<groupId>org.yy.opensource-app-demo</groupId>
+			<artifactId>opensource-demo-web-action</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 

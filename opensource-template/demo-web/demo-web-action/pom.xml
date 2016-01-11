@@ -8,22 +8,22 @@
 		<version>1.0</version>
 		<relativePath>../../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-web-action</artifactId>
+	<groupId>org.yy.opensource-app-demo</groupId>
+	<artifactId>opensource-demo-web-action</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-web-action</name>
+	<name>opensource-demo-web-action</name>
 
 	<dependencies>
 
 		<!-- 应用依赖 -->
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-service-module1</artifactId>
+			<groupId>org.yy.opensource-app-demo</groupId>
+			<artifactId>opensource-demo-service-module1</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.yy.app-demo</groupId>
-			<artifactId>demo-service-module2</artifactId>
+			<groupId>org.yy.opensource-app-demo</groupId>
+			<artifactId>opensource-demo-service-module2</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 

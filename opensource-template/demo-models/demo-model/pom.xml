@@ -9,10 +9,10 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-model</artifactId>
+	<groupId>org.yy.opensource-app-demo</groupId>
+	<artifactId>opensource-demo-model</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-model</name>
+	<name>opensource-demo-model</name>
 
 	<dependencies>
 		<dependency>
@@ -33,12 +33,12 @@
 		<dependency>
 			<groupId>com.google.code.simple-spring-memcached</groupId>
 			<artifactId>spymemcached-provider</artifactId>
-			<scope>provider</scope>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.simple-spring-memcached</groupId>
 			<artifactId>xmemcached-provider</artifactId>
-			<scope>provider</scope>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>

@@ -8,10 +8,10 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-task-module2</artifactId>
+	<groupId>org.yy.opensource-app-demo</groupId>
+	<artifactId>opensource-demo-task-module2</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-task-module2</name>
+	<name>opensource-demo-task-module2</name>
 
 	<dependencies> 
   

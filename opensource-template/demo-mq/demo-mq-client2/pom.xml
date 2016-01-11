@@ -8,10 +8,10 @@
 		<version>1.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>org.yy.app-demo</groupId>
-	<artifactId>demo-mq-client2</artifactId>
+	<groupId>org.yy.opensource-app-demo</groupId>
+	<artifactId>opensource-demo-mq-client2</artifactId>
 	<packaging>jar</packaging>
-	<name>demo-mq-client2</name>
+	<name>opensource-demo-mq-client2</name>
 
 	<dependencies>
 		
