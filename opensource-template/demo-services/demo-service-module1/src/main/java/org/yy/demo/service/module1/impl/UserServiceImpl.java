@@ -21,7 +21,7 @@ import org.yy.demo.dto.UserDTO;
 import org.yy.demo.model.User;
 import org.yy.demo.service.module1.UserService;
 import org.yy.framework.base.validator.ValidateError;
-import org.yy.framework.base.validator.ValidateUtil;
+import org.yy.framework.base.validator.ValidateService;
 import org.yy.framework.basedata.exception.ServiceException;
 import org.yy.framework.basedata.query.ResultDto;
 
@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
 		user.setUpdateTime(new Date());
 
 		// 1,校验用户信息
-		List<ValidateError> errors = ValidateUtil.validate(user);
+		List<ValidateError> errors = ValidateService.validate(user);
 		if (errors.size() > 0) {
 			throw new ServiceException("USER_VALIDATE_ERROR", errors.toString());
 		}
@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void updateUser(User user) throws ServiceException {
 		// 1,校验用户信息
-		List<ValidateError> errors = ValidateUtil.validate(user, "userID",
+		List<ValidateError> errors = ValidateService.validate(user, "userID",
 				"loginID", "name");
 		if (errors.size() > 0) {
 			throw new ServiceException("USER_VLIDA_ERROR", errors.toString());

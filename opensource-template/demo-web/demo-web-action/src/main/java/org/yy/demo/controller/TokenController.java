@@ -16,7 +16,7 @@ public class TokenController extends AbstractTokenController {
 
 	@RequestMapping("/token")
 	public ModelAndView token() {
-		if (tokenHandler.validToken(tokenHandler.fetchToken()))
+		if (tokenService.validToken(tokenService.fetchToken()))
 			return processSuccess("jsp/tiles", "123");
 		else {
 			return processSuccess("jsp/contact", new User());
